@@ -1,0 +1,22 @@
+<h1>Search Results</h1>
+
+<ul>
+  {% for city in object_list %}
+    <li>
+
+       <h1>Product List  -{{city.product}}</h1>
+      <p><h1>product_name:</h1>{{ city.product }}</p>
+
+      </p><h1>Product_type</h1>: {{ city.product_type }}</p>
+      <p><h1>Product_unit</h1>: {{ city.product_unit }} </p>
+      <p><h1>Product_stock</h1>: {{city.stock}} </p>
+      <p><h1>Product_barcode</h1>: {{city.barcode}}</p>
+
+    </li>
+
+    <form action="{% url 'search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Search...">
+      </form>
+
+  {% endfor %}
+</ul>
